@@ -1,5 +1,4 @@
-# site_one
-
+# 一个基于vue的介绍古筝文化的网站
 > A Vue.js project
 
 ## Build Setup
