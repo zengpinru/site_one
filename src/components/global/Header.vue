@@ -1,6 +1,11 @@
 <template>
   <header>
     <nav class="clearfix">
+      <!-- logo -->
+      <div class="logo">
+        <img src="../../assets/image/logo.png" alt="logo">
+      </div>
+      <!-- logo/ -->
       <!-- PC端 -->
       <ul class="pc-nav">
         <li>
@@ -46,9 +51,9 @@
           <li>
             <a href="#"> 首页</a>
           </li>
-          <li>
-            <a href="#" class="drop-down">关于</a>
-            <ul class="drop-down-menu">
+          <li ref="menu-1">
+            <a href="#">关于&nbsp;<span class="iconfont" @click.stop="switchChildMenu" data-id="menu-1">&#xe607;</span></a>
+            <ul class="mobile-child-nav" v-show="showChildMenu">
               <li>
                 <a href="#">公司简介</a>
               </li>
@@ -81,52 +86,76 @@ import Velocity from 'velocity-animate'
 export default {
   data () {
     return {
-      openMenu: false,
-      showMobileMenu: false,
-      mobileNavHeight: '0px'
+      openMenu: false, // 控制菜单图标的状态
+      showMobileMenu: false, // 是否展示一级菜单
+      showChildMenu: false, // 是否展示二级菜单
+      mobileNavHeight: '0px' // 一级菜单动画开始时的初始高度
     }
   },
 
   mounted () {
-    this.computeMenuHeight()
+    this.initMobileNavHeight()
   },
 
   methods: {
-    // 切换菜单状态
+    // 切换一级菜单状态
     switchMenu () {
-      if (this.openMenu) { // 关闭移动端菜单
+      if (this.openMenu) { // 关闭一级菜单
         this.openMenu = false
         this.showMobileMenu = false
-      } else { // 打开移动端菜单
+      } else { // 打开一级菜单
         this.openMenu = true
         this.showMobileMenu = true
       }
     },
 
-    // 打开或关闭菜单动画
+    // 初始化mobileNavHeight
+    initMobileNavHeight () {
+      let lis = this.$refs.mobileNav
+      this.mobileNavHeight = this.getMenuHeight(lis) + 'px'
+    },
+
+    // 打开或关闭一级菜单动画
     beforeEnter (el) {
       el.style.height = '0px'
     },
     enter (el) {
-      Velocity(el, { height: this.mobileNavHeight }, { duration: 600 })
+      Velocity(el, { height: this.mobileNavHeight }, { duration: 300 })
     },
     beforeLeave (el) {
       el.style.height = this.mobileNavHeight
     },
     leave (el, done) {
-      Velocity(el, { height: '0px' }, { duration: 600, complete: done })
+      Velocity(el, { height: '0px' }, { duration: 300, complete: done })
     },
 
-    // 计算移动端菜单的高度
-    computeMenuHeight () {
+    // 切换子菜单的状态
+    switchChildMenu (e) {
+      let id = e.currentTarget.getAttribute('data-id')
+      let li = this.$refs[id]
+      let ul = li.lastChild
+      let height = this.getMenuHeight(ul)
+      if (this.showChildMenu) {
+        li.style.height = '35px'
+        this.showChildMenu = false
+      } else {
+        li.style.height = height + 35 + 'px'
+        this.showChildMenu = true
+      }
+      // 重新计算一级菜单的高度
+      this.initMobileNavHeight()
+      this.$refs.mobileNav.style.height = this.mobileNavHeight
+    },
+
+    // 获取菜单高度
+    getMenuHeight (el) {
       let height = 0
-      let lis = this.$refs.mobileNav.childNodes
-      lis.forEach(element => {
+      el.childNodes.forEach(element => {
         if (element.nodeType === 1) {
           height += parseInt(window.getComputedStyle(element).height)
         }
       })
-      this.mobileNavHeight = height + 'px'
+      return height
     }
   }
 }
@@ -137,6 +166,11 @@ nav {
   position: relative;
   width: 90%;
   margin: 0 auto;
+}
+/*--------------------------------- logo -----------------------------------*/
+.logo {
+  float: left;
+  height: 60px;
 }
 
 /*------------------------------- PC端导航 ---------------------------------*/
@@ -187,11 +221,23 @@ nav {
 .drop-down-menu {
   position: absolute;
   right: 0;
-  top: 60px;
+  top: 68px;
+  z-index: 10;
   display: none;
   width: 180%;
   padding: 10px 0;
-  background: #cccccc;
+  border: 1px solid #cccccc;
+  background: #ffffff;
+}
+
+.drop-down-menu::after {
+  position: absolute;
+  top: -9px;
+  right: 10%;
+  content: '';
+  border-bottom: 8px solid #cccccc;
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent;
 }
 
 .drop-down-menu::before {
@@ -199,7 +245,8 @@ nav {
   top: -8px;
   right: 10%;
   content: '';
-  border-bottom: 8px solid #cccccc;
+  z-index: 10;
+  border-bottom: 8px solid #ffffff;
   border-left: 8px solid transparent;
   border-right: 8px solid transparent;
 }
@@ -263,7 +310,7 @@ nav {
   width: 100%;
   padding: 10px 0;
   border-bottom: 1px solid #cccccc;
-  background: yellow;
+  background: #ffffff;
 }
 
 .mobile-nav>li {
@@ -274,9 +321,18 @@ nav {
 
 .mobile-nav>li>a {
   display: block;
-  height: 100%;
+  height: 35px;
+  line-height: 35px;
 }
 
+.mobile-child-nav {
+  margin-left: 20px;
+}
+
+.mobile-child-nav>li {
+  height: 35px;
+  line-height: 35px;
+}
 /*------------------------------- 响应式代码 ---------------------------------*/
 @media screen and (max-width: 768px) {
   nav {

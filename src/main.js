@@ -6,6 +6,7 @@ import router from './router'
 // 引入全局css
 import 'css/normalize.css'
 import 'css/style.css'
+import 'css/iconfont.css'
 
 Vue.config.productionTip = false
 
