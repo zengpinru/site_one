@@ -43,10 +43,10 @@ export default {
 <style scoped>
 .swipe {
   width: 100%;
-  height: 350px;
+  height: 30vw;
 }
 .swipe img {
   width: 100%;
-  max-height: 350px;
+  height: 30vw;
 }
 </style>
