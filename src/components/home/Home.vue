@@ -52,6 +52,13 @@
       <div class="swiper-pagination"></div>
     </div>
     <!-- 产品展示/ -->
+    <!-- 横幅 -->
+    <div class="banner">
+      <h2>调整搁弦点</h2>
+      <p>筝弦与搁弦点的匹配度，对使用时滑音的音色、手感起着关键的作用，所以调整搁弦点精密度堪比“刺绣”</p>
+      <p><a href="#">工艺掠影</a></p>
+    </div>
+    <!-- 横幅/ -->
   </main>
 </template>
 
@@ -128,7 +135,7 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 /*------------------------------- 古筝文化介绍 ---------------------------------*/
 .introduce {
   width: 90%;
@@ -280,8 +287,40 @@ export default {
   text-align: center;
 }
 
-.swiper-pagination-bullet {
+.swiper-pagination >>> .swiper-pagination-bullet {
   margin-right: 10px;
+}
+
+/*-------------------------------- 横幅 ----------------------------------*/
+.banner {
+  overflow: hidden;
+  height: 200px;
+  background: url(../../assets/image/home/swipe2.jpg);
+}
+
+.banner h2 {
+  margin-top: 30px;
+}
+
+.banner h2,
+.banner p {
+  text-align: center;
+  color: #ffffff;
+}
+
+.banner a {
+  display: inline-block;
+  width: 100px;
+  height: 30px;
+  margin-top: 10px;
+  border-radius: 3px;
+  line-height: 30px;
+  color: #000000;
+  background: #ffffff;
+}
+
+.banner a:hover {
+  background: #cccccc;
 }
 
 /*------------------------------- 响应式代码 ---------------------------------*/
