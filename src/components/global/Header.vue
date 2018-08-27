@@ -12,7 +12,7 @@
           <a href="#"> 首页</a>
         </li>
         <li>
-          <a href="#" class="drop-down">关于</a>
+          <router-link to="/about/1" class="drop-down">关于</router-link>
           <ul class="drop-down-menu">
             <li>
               <a href="#">公司简介</a>
