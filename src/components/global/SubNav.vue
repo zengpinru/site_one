@@ -5,7 +5,9 @@
         <a href="#" class="active">- 公司简介</a>
         <a href="#">- 古筝文化</a>
       </div>
-      <div class="right"></div>
+      <div class="right">
+        你的位置：<a href="#">首页</a> &rsaquo; <a href="#">关于</a> &rsaquo;
+      </div>
     </div>
   </div>
 </template>
@@ -45,5 +47,12 @@
 
 .right {
   float: right;
+  line-height: 50px;
+  font-size: 13px;
+  color: #ffffff;
+}
+
+.right a {
+  color: #ffffff;
 }
 </style>
