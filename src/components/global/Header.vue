@@ -9,16 +9,16 @@
       <!-- PC端 -->
       <ul class="pc-nav">
         <li>
-          <a href="#"> 首页</a>
+          <router-link to="/">首页</router-link>
         </li>
         <li>
           <router-link to="/about/1" class="drop-down">关于</router-link>
           <ul class="drop-down-menu">
             <li>
-              <a href="#">公司简介</a>
+              <router-link to="/about/1">公司简介</router-link>
             </li>
             <li>
-              <a href="#">古筝文化</a>
+              <router-link to="/about/2">古筝文化</router-link>
             </li>
           </ul>
         </li>
@@ -49,16 +49,16 @@
         @leave="leave">
         <ul class="mobile-nav" v-show="showMobileMenu" ref="mobileNav">
           <li>
-            <a href="#"> 首页</a>
+            <router-link to="/">首页</router-link>
           </li>
           <li ref="menu-1">
-            <a href="#">关于&nbsp;<span class="iconfont" @click.stop="switchChildMenu" data-id="menu-1">&#xe607;</span></a>
+            <router-link to="/about/1">关于&nbsp;<span class="iconfont" @click.stop="switchChildMenu" data-id="menu-1">&#xe607;</span></router-link>
             <ul class="mobile-child-nav" v-show="showChildMenu">
               <li>
-                <a href="#">公司简介</a>
+                <router-link to="/about/1">公司简介</router-link>
               </li>
               <li>
-                <a href="#">古筝文化</a>
+                <router-link to="/about/2">古筝文化</router-link>
               </li>
             </ul>
           </li>

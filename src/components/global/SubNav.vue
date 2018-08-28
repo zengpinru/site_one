@@ -2,11 +2,11 @@
   <div class="sub-nav">
     <div class="container clearfix">
       <div class="left">
-        <a href="#" class="active">- 公司简介</a>
-        <a href="#">- 古筝文化</a>
+        <router-link to="/about/1" class="active">- 公司简介</router-link>
+        <router-link to="/about/2">- 古筝文化</router-link>
       </div>
       <div class="right">
-        你的位置：<a href="#">首页</a> &rsaquo; <a href="#">关于</a> &rsaquo;
+        你的位置：<router-link to="/">首页</router-link> &rsaquo; <router-link to="/about/1">关于</router-link> &rsaquo;
       </div>
     </div>
   </div>
