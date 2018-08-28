@@ -5,7 +5,7 @@
       <div class="img-cover"></div>
       <a :href="to"><span class="iconfont">&#xe644;</span></a>
     </div>
-    <h2 class="product-name"><a :href="to">{{ productName }}</a></h2>
+    <h2 class="product-name"><a :href="to" class="text-overflow">{{ productName }}</a></h2>
   </div>
 </template>
 

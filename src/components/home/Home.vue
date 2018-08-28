@@ -39,7 +39,7 @@
         <!-- slides -->
         <swiper-slide v-for="(items,index) in page" :key="index">
           <div class="product-box">
-            <product v-for="(item,index1) in items" class="product"
+            <product-unit v-for="(item,index1) in items" class="product"
               :key="index1"
               :img-src="item.imgSrc"
               :product-name="item.productName"
@@ -64,7 +64,7 @@
 
 <script>
 import SowingMap from '@/components/global/SowingMap'
-import Product from '@/components/global/Product'
+import ProductUnit from '@/components/global/ProductUnit'
 import { swiper, swiperSlide } from 'vue-awesome-swiper'
 import 'swiper/dist/css/swiper.css'
 
@@ -128,7 +128,7 @@ export default {
 
   components: {
     SowingMap,
-    Product,
+    ProductUnit,
     swiper,
     swiperSlide
   }

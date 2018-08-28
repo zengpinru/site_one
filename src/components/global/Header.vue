@@ -23,7 +23,7 @@
           </ul>
         </li>
         <li>
-          <a href="#">产品</a>
+          <router-link to="/product">产品</router-link>
         </li>
         <li>
           <a href="#">工艺</a>
@@ -63,7 +63,7 @@
             </ul>
           </li>
           <li>
-            <a href="#">产品</a>
+            <router-link to="/product">产品</router-link>
           </li>
           <li>
             <a href="#">工艺</a>
