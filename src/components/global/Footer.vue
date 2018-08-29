@@ -92,6 +92,11 @@ footer {
 
 .col li a {
   font-size: 14px;
+  color: rgb(125, 124, 124);
+}
+
+.col li a:hover,
+.col h4 a:hover {
   color: rgb(184, 182, 182);
 }
 
