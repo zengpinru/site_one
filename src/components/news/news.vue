@@ -10,8 +10,8 @@
           </div>
           <span class="publish-time"><span>08-06 </span> / 2018</span>
           <a href="#" class="more-link">
-              <span>了解更多</span>
-            </a>
+            <span>了解更多</span>
+          </a>
         </div>
         <div class="news-list-item">
           <h2><a href="#">关于琴弦保养的诸多疑问</a></h2>
@@ -20,8 +20,8 @@
           </div>
           <span class="publish-time"><span>08-06 </span> / 2018</span>
           <a href="#" class="more-link">
-              <span>了解更多</span>
-            </a>
+            <span>了解更多</span>
+          </a>
         </div>
         <div class="news-list-item">
           <h2><a href="#">关于琴弦保养的诸多疑问</a></h2>
@@ -30,8 +30,8 @@
           </div>
           <span class="publish-time"><span>08-06 </span> / 2018</span>
           <a href="#" class="more-link">
-              <span>了解更多</span>
-            </a>
+            <span>了解更多</span>
+          </a>
         </div>
       </div>
       <div class="news-sidebar">
