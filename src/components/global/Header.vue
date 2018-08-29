@@ -29,7 +29,7 @@
           <a href="#">工艺</a>
         </li>
         <li>
-          <a href="#">新闻</a>
+          <router-link to="/news">新闻</router-link>
         </li>
         <li>
           <a href="#">联系</a>
@@ -69,7 +69,7 @@
             <a href="#">工艺</a>
           </li>
           <li>
-            <a href="#">新闻</a>
+            <router-link to="/news">新闻</router-link>
           </li>
           <li>
             <a href="#">联系</a>
