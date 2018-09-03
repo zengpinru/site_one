@@ -2,15 +2,30 @@
   <div class="sub-nav">
     <div class="container clearfix">
       <div class="left">
-        <router-link to="/about/1" class="active">- 公司简介</router-link>
-        <router-link to="/about/2">- 古筝文化</router-link>
+        <router-link :to="subNavData[0].to" class="active">- {{ subNavData[0].name }}</router-link>
+        <router-link :to="subNavData[1].to">- {{ subNavData[1].name }}</router-link>
       </div>
       <div class="right">
-        你的位置：<router-link to="/">首页</router-link> &rsaquo; <router-link to="/about/1">关于</router-link> &rsaquo;
+        你的位置：<router-link to="/">首页</router-link> &rsaquo; <router-link :to="currentPosition.to">{{ currentPosition.name }}</router-link> &rsaquo;
       </div>
     </div>
   </div>
 </template>
+
+<script>
+export default {
+  props: {
+    currentPosition: {
+      type: Object,
+      required: true
+    },
+    subNavData: {
+      type: Array,
+      required: true
+    }
+  }
+}
+</script>
 
 <style>
 .sub-nav {

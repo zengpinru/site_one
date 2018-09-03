@@ -1,7 +1,7 @@
 <template>
   <main>
     <met-banner/>
-    <sub-nav />
+    <sub-nav :current-position="currentPosition" :sub-nav-data="subNavData"/>
     <div class="about-content">
       <img src="../../assets/image/home/about.jpg" alt="about">
       <div class="paragraph">
@@ -27,6 +27,26 @@
 import MetBanner from '@/components/global/MetBanner'
 import SubNav from '@/components/global/SubNav'
 export default {
+  data () {
+    return {
+      currentPosition: {
+        name: '关于',
+        to: '/about/1'
+      },
+      subNavData: [
+        {
+          id: '1',
+          name: '公司简介',
+          to: '/about/1'
+        },
+        {
+          id: '2',
+          name: '古筝文化',
+          to: '/about/2'
+        }
+      ]
+    }
+  },
   components: {
     MetBanner,
     SubNav

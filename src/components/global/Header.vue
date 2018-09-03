@@ -32,7 +32,7 @@
           <router-link to="/news">新闻</router-link>
         </li>
         <li>
-          <a href="#">联系</a>
+          <router-link to="/contact">联系</router-link>
         </li>
       </ul>
       <!-- PC端/ -->
@@ -72,7 +72,7 @@
             <router-link to="/news">新闻</router-link>
           </li>
           <li>
-            <a href="#">联系</a>
+            <router-link to="/contact">联系</router-link>
           </li>
         </ul>
       </transition>
